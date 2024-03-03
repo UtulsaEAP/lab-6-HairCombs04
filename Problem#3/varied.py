@@ -1,12 +1,17 @@
-def process_input(input_string):
-      # Split into separate strings
+"""
+Name: Bradyn Combs
+Lab Time: 2/29/24 2:00 PM
+"""
 
+def process_input(input_string):
+    # Split into separate strings
+    numbers = input_string.split()
     # Convert strings to floats
-    
+    numbers = [float(x) for x in numbers if float(x) >= 0]
 
     # Get max and average
-    max_value = 
-    average_value = 
+    max_value = max(numbers)
+    average_value = sum(numbers) / len(numbers)
     return max_value, average_value
 
 if __name__ == "__main__":

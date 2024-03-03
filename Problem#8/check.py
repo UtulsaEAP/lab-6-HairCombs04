@@ -1,5 +1,12 @@
+"""
+Name: Bradyn Combs
+Lab Time: 2/29/24 2:00 PM
+"""
+
 def in_order(nums):
     # Type your code here.
+    a = [nums[i-1] <= nums[i] for i in range(1, len(nums))]
+    return all(x == a[0] for x in a)
     
 if __name__ == '__main__':
     # Test out-of-order example
