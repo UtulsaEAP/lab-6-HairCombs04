@@ -1,6 +1,6 @@
 """
 Name: Bradyn Combs
-Lab Time: 2/29/24 2:00 PM
+Lab Time: 02/29/24 2:00 PM
 """
 
 def food_input():
