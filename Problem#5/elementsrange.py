@@ -6,7 +6,7 @@ Lab Time: 2/29/24 2:00 PM
 def filter_and_print_range(input_list, min_val, max_val):
     #write your code here
     for num in input_list:
-        if min_val <= num <= max_val:
+        if (num >= min_val and num <= max_val):
             print(num, end=',')
 
 if __name__ == '__main__':

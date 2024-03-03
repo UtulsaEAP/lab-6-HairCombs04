@@ -9,23 +9,23 @@ def calculate_car_wash_price(service_choice1, service_choice2):
     total = 0
    
    #type your code here 
-    print("ZyCar Wash")
-    print("Base car wash -- $10")
-    total = total + base_wash
-    if service_choice1 in services:
-        value = services[service_choice1]
-        total = total + value
-        print('{} - ${}'.format(service_choice1, value))
-    if service_choice2 in services:
-        value = services[service_choice2]
-        total = total + value
-        print('{} - ${}'.format(service_choice2, value))
-    print('----')
-    print("Total price: ${}".format(total))
+    description = ["ZyCar Wash", "Base car wash - $10"]
+    if (service_choice1 != '-'):
+        total += services[service_choice1]
+        description.append(
+            f'{service_choice1} - ${services[service_choice1]}'
+        )
+    if (service_choice2 != '-'):
+        total += services[service_choice2]
+        description.append(
+            f'{service_choice2} - ${services[service_choice2]}'
+        )
+    total += base_wash
+    for descriptionPart in description:
+        print(descriptionPart)    
+    print("-----")
+    print(f'Total price: ${total}')
 
-
-
-    
 if __name__ == '__main__':
     # Get user input for service choices
     service_choice1 = input()

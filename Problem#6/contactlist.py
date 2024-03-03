@@ -4,23 +4,19 @@ Lab Time: 2/29/24 2:00 PM
 """
 
 def process_user_contacts(user_input):
-    user_contacts = {}
-    while True:
-        try:
-            name,phone = input().split()
-        except:
-            break
- 
-    user_contacts[name] = phone
-
-    # Put word pairs into a dictionary
-    
+    nameAndPhoneTokens = user_input.split(" ")
+    nameAndPhoneDict = {}
+    for nameAndPhoneToken in nameAndPhoneTokens:
+        nameToken = nameAndPhoneToken.split(",")[0]
+        phoneToken = nameAndPhoneToken.split(",")[1]
+        nameAndPhoneDict[nameToken] = phoneToken
     # Get contact name from input, output contact's phone number
-    user_input = input("Enter the contact name: ")
-    if user_input in user_contacts:
-        print(user_contacts[user_input])
+    contact_name = input("Enter the contact name: ")
+    if (nameAndPhoneDict.get(contact_name) is None):
+        print("Contact not found.")
+    else:
+        print(nameAndPhoneDict[contact_name])
     
-   
 if __name__ == '__main__':
     # Get input for word pairs
     user_input = input("Enter word pairs (name, phone number): ")

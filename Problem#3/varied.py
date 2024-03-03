@@ -5,13 +5,15 @@ Lab Time: 2/29/24 2:00 PM
 
 def process_input(input_string):
     # Split into separate strings
-    numbers = input_string.split()
+    floatTokens = input_string.split(" ")
     # Convert strings to floats
-    numbers = [float(x) for x in numbers if float(x) >= 0]
+    floatNums = []
+    for floatToken in floatTokens:
+        floatNums.append(float(floatToken))
 
     # Get max and average
-    max_value = max(numbers)
-    average_value = sum(numbers) / len(numbers)
+    max_value = max(floatNums)
+    average_value = sum(floatNums) / len(floatNums)
     return max_value, average_value
 
 if __name__ == "__main__":
